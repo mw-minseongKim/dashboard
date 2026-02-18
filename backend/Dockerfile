@@ -42,6 +42,11 @@ COPY --from=builder --chown=dashboard-user:dashboard /app/src /app/src
 # Copy project metadata
 COPY --chown=dashboard-user:dashboard pyproject.toml ./
 
+# Copy alembic configuration and migration scripts
+COPY --chown=dashboard-user:dashboard alembic.ini ./
+COPY --chown=dashboard-user:dashboard migration ./migration
+COPY --chown=dashboard-user:dashboard scripts/entrypoint.sh ./
+
 # Add .venv/bin to PATH so we can run uvicorn
 ENV PATH="/app/.venv/bin:$PATH"
 
@@ -57,4 +62,4 @@ USER dashboard-user
 EXPOSE 8000
 
 # Run the apllication
-CMD ["uvicorn", "dashboard.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["sh", "entrypoint.sh"]
