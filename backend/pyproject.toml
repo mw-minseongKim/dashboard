@@ -8,8 +8,12 @@ version = "0.1.0"
 description = "Dashboard is a backend service for the dashboard application."
 requires-python = ">=3.12"
 dependencies = [
-    "fastapi>=0.129.0",
+    "alembic>=1.18.4",
+    "fastapi[standard]>=0.129.0",
+    "greenlet>=3.3.1",
+    "passlib[argon2]>=1.7.4",
     "psycopg[binary]>=3.3.2",
+    "python-jose[cryptography]>=3.5.0",
     "sqlalchemy>=2.0.46",
     "uvicorn>=0.41.0",
 ]
