@@ -1,0 +1,13 @@
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE
+.vscode/*
+!.vscode/extensions.json
+
+# Environement
+.env
+.env.local
+.env.*.local
