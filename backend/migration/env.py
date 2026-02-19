@@ -1,4 +1,4 @@
-import asyncio
+import asyncio  # noqa: I001
 from logging.config import fileConfig
 
 from alembic import context
@@ -6,7 +6,8 @@ from sqlalchemy import pool
 from sqlalchemy.engine import Connection
 from sqlalchemy.ext.asyncio import async_engine_from_config
 
-from dashboard.auth.models import User
+from dashboard.auth.models import User  # noqa: F401
+from dashboard.item.models import Item  # noqa: F401
 from dashboard.config import settings
 from dashboard.database import Base
 
